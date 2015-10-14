@@ -1,0 +1,34 @@
+\documentclass[xetex,aspectratio=169]{beamer}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\usepackage{pgfpages}
+
+\usepackage{takahashi}
+\newcommand{\stack}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
+
+% make pgfpages and xelatex play nicely together.
+% I don't know why this works, the Internet told me to do it.
+\renewcommand\pgfsetupphysicalpagesizes{%
+    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+}
+
+\usefonttheme{professionalfonts}
+\setsansfont{Myriad Pro}
+%\setdefaultlanguage{english}
+\usecolortheme{crane}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeameroption{show notes on second screen=right}
+
+\title[Localization]{How We Approach Localization at Meetup}
+\author{Mike Castleman}
+\institute[Meetup]{Meetup, Inc.}
+\date[2015-03-19]{March 19, 2015}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\end{document}
