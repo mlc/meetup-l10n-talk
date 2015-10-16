@@ -6,6 +6,7 @@
 \usepackage{url}
 \usepackage{takahashi}
 \usepackage{listings}
+\usepackage{cancel}
 \newcommand{\stack}[1]{\begin{tabular}{@{}c@{}}#1\end{tabular}}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \definecolor{dkgreen}{rgb}{0.2,0.9,0.2}
@@ -112,6 +113,42 @@
 \onslide<5>{za 0 mjeseci, za 1 mjesec, za 2 mjeseca}}%
 \note<1>{english} \note<2>{spanish, german} \note<3>{french} \note<4>{japanese} \note<5>{croatian\par Fortunately, Android offers to take care of all of this for you! Let it.}}
 
+\begin{frame}[fragile]
+\note{sometimes you need \texttt{plurals} resources even when there's no number in the string!}
+\texttt{res/values/strings.xml}:
+\vskip 1ex
+\begin{lstlisting}[language=XML]
+<!-- header above a list of people who have said
+     they are not going to an event. -->
+<plurals name="rsvp_no_header">
+    <item quantity="one">Not going</item>
+    <item quantity="other">Not going</item>
+</plurals>
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\texttt{res/values\textbf{-es}/strings.xml}:
+\vskip 1ex
+\begin{lstlisting}[language=XML]
+<!-- header above a list of people who have said
+     they are not going to an event. -->
+<plurals name="rsvp_no_header">
+    <item quantity="one">No atenderá</item>
+    <item quantity="other">No atenderán</item>
+</plurals>
+\end{lstlisting}
+\end{frame}
+
+\takahashi{\stack{1 new message, 2 new messages\\
+1 new notification, 2 new notifications\\[1ex]
+%\vskip 0.5ex
+\only<2-3>{\texttt{\%d new \%s}}%
+\only<4>{\cancel{\texttt{\%d new \%s}}}\\[1ex]
+%\vskip 0.5ex
+\onslide<3->{1 nuevo mensaje, 2 nuevos mensajes}\\
+\onslide<3->{1 nueva notificación, 2 nuevas notificaciones}}}
+
 \takahashi{\includegraphics{app-translation-svc-1.png}}
 \note{our first try at translating the android app. it's easy enough to use and works sort of okay, but…}
 
@@ -184,7 +221,7 @@ public static void maybeUseShorterCopy(final TextView textView,
 \takahashi{\stack{
 \onslide<1->{Monday, October 19}\\
 \onslide<2->{Monday, 19 October}\\
-\onslide<3->{Montag, 19. Oktober}\\
+\onslide<3->{Montag, 19.~Oktober}\\
 \onslide<4->{lunes, 19 de octubre}}}
 
 \takahashi{\stack{If you try to do\\
@@ -224,11 +261,11 @@ this yourself, \onslide<2>{there\\
 
 \begin{frame}{Stay in touch!}
 \note<1>{omg another bullet list}
-\Large{\onslide<1->{\begin{itemize}
+\Large{\begin{itemize}
 \item mike castleman
 \item \texttt{mlc@meetup.com}
 \item \texttt{@vermicelli}
-\end{itemize}}
+\end{itemize}
 \vskip 5ex
 \onslide<2>{We're hiring!}}
 \end{frame}
