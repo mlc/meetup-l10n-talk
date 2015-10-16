@@ -7,3 +7,5 @@ l10n.pdf
 *.snm
 *.toc
 *.vrb
+*.csv
+*#
