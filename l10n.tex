@@ -150,6 +150,13 @@
 \item don't put all the strings not to be translated there.
 \end{itemize}}
 
+\takahashi{\stack{1 new message, 2 new messages\\
+1 new notification, 2 new notifications\\[1ex]
+\only<2-3>{\texttt{\%d new \%s}}%
+\only<4>{\cancel{\texttt{\%d new \%s}}}\\[1ex]
+\onslide<3->{1 nuevo mensaje, 2 nuevos mensajes}\\
+\onslide<3->{1 nueva notificación, 2 nuevas notificaciones}}}
+
 \takahashi{\texttt{<plurals/>}}
 \note{super-useful!}
 
@@ -186,15 +193,6 @@
 </plurals>
 \end{lstlisting}
 \end{frame}
-
-\takahashi{\stack{1 new message, 2 new messages\\
-1 new notification, 2 new notifications\\[1ex]
-%\vskip 0.5ex
-\only<2-3>{\texttt{\%d new \%s}}%
-\only<4>{\cancel{\texttt{\%d new \%s}}}\\[1ex]
-%\vskip 0.5ex
-\onslide<3->{1 nuevo mensaje, 2 nuevos mensajes}\\
-\onslide<3->{1 nueva notificación, 2 nuevas notificaciones}}}
 
 \takahashi{\includegraphics{app-translation-svc-1.png}}
 \note{our first try at translating the android app. it's easy enough to use and works sort of okay, but…}
