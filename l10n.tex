@@ -99,6 +99,16 @@
 \item don't put all the strings not to be translated there.
 \end{itemize}}
 
+\takahashi{\texttt{<plurals/>}}
+\note{super-useful!}
+
+\takahashi{\stack{\onslide<1->{0 days, 1 day, 2 days}\\
+\onslide<2->{0 días, 1 día, 2 días\\0 Tage, 1 Tag, 2 Tage}\\
+\onslide<3->{0 \textbf<3>{jour}, 1 jour, 2 jours}\\
+\onslide<4->{\fontspec{TakaoMincho}{0日、1日、2日}}\\
+\onslide<5>{za 0 mjeseci, za 1 mjesec, za 2 mjeseca}}%
+\note<1>{english} \note<2>{spanish, german} \note<3>{french} \note<4>{japanese} \note<5>{croatian\par Fortunately, Android offers to take care of all of this for you! Let it.}}
+
 \takahashi{\includegraphics{app-translation-svc-1.png}}
 \note{our first try at translating the android app. it's easy enough to use and works sort of okay, but…}
 
@@ -166,6 +176,47 @@ public static void maybeUseShorterCopy(final TextView textView,
 \end{frame}
 
 \takahashi{Dates \& Times}
+
+\takahashi{\stack{
+\onslide<1->{Monday, October 19}\\
+\onslide<2->{Monday, 19 October}\\
+\onslide<3->{Montag, 19. Oktober}\\
+\onslide<4->{lunes, 19 de octubre}}}
+
+\takahashi{\stack{If you try to do\\
+this yourself, \onslide<2>{there\\
+\textbf{will} be bugs.}}}
+
+\takahashi{CLDR}
+\note{\begin{itemize}
+\item ``Common Locale Data Repository''
+\item part of Unicode
+\item basis for Android l10n stuff
+\item but sometimes it's useful to look at their website and take things from there
+\end{itemize}}
+
+\takahashi{\stack{\texttt{DateUtils.formatDateTime}\\
+\texttt{DateUtils.formatDateRange}\\
+\texttt{DateUtils.formatElapsedTime}}}
+\note{There's lots of garbage in the Android SDK, but these methods are srsly battle-tested. Even then, we've found (subtle) bugs in pre-KitKat implementations! Maybe you want to read the source?}
+
+\takahashi{\texttt{libcore.icu.ICU}}
+\note{hidden, private internal API. but maybe for some things you want to call it by reflection anyway. you'll need a fallback though for platforms where it's unavailable. some useful stuff like words for ``yesterday'' and ``today'', and slightly lower-level date formatting.}
+
+\takahashi{Sorting}
+
+\takahashi{\texttt{String implements Comparable<String>}}
+
+\takahashi{\stack{Apple\\Orange\\banana}}
+
+\takahashi{\texttt{String.CASE\_INSENSITIVE\_ORDER}}
+\note{works okay for English, but not for all languages. like German ß or what have you}
+
+\takahashi{\texttt{java.text.Collator}}
+\note{getting there!}
+
+\takahashi{TK TK: screenshot of Japanese onboarding screen}
+\note{but sometimes, sorting \textit{can not be done by a computer}. \url{http://www.localizingjapan.com/blog/2011/02/13/sorting-in-japanese-\%E2\%80\%94-an-unsolved-problem/} Again, this is something that a human who cares about your product may tell you, but a 5¢/word translation service will not.}
 
 \begin{frame}{Stay in touch!}
 \note<1>{omg another bullet list}
