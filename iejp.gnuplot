@@ -118,7 +118,7 @@ set xlabel ""
 set xlabel  offset character 0, 0, 0 font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  offset character 0, 0, 0 font "" textcolor lt -1 norotate
-set xrange [ "07/06/15" : "10/05/15" ] noreverse nowriteback
+set xrange [ "07/06/15" : "10/12/15" ] noreverse nowriteback
 set x2range [ * : * ] noreverse nowriteback
 set ylabel "" 
 set ylabel  offset character 0, 0, 0 font "" textcolor lt -1 rotate by -270
