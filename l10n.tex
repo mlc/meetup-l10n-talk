@@ -87,7 +87,7 @@
 \title[Localization]{How We Approach Localization at Meetup}
 \author{Mike Castleman}
 \institute[Meetup]{Meetup, Inc.}
-\date[2015-03-19]{March 19, 2015}
+\date[2015-10-19]{October 19, 2015}
 \begin{document}
 
 \begin{frame}
@@ -111,10 +111,11 @@
 \takahashi{\includegraphics{piechart-2.pdf}}
 \note{an additional 11\% can speak English as a second or third language}
 
-\takahashi{l10n}
-\note{localization yo! We'll talk primarily about how to do the technical part here, but obvs you need to be sensitive to other local needs etc etc yeah}
+\takahashi{\stack{\only<1,3>{l10n}\only<2>{\cancel{l10n}}\onslide<3>{?}\\\onslide<2-3>{i18n}\onslide<3>{?}\\\onslide<3>{¯\char`\\\_({\fontspec[Mapping=tex-text]{TakaoMincho}{ツ}})\_/¯}}%
+\note<1>{localization yo!}%
+\note<3>{We'll talk primarily about how to do the technical part here, but obvs you need to be sensitive to other local needs etc etc yeah}}
 
-\takahashi{\stack{Which\\lanugages?}}
+\takahashi{\stack{Which\\languages?}}
 
 \takahashi{\includegraphics{analytics.png}}
 \note{do your market research… every business is different. if you're looking at GA, maybe like sum \texttt{en-us} and \texttt{en-ca}.}
@@ -123,7 +124,7 @@
 \note{like, supporting all the same languages as on dweb is not a \textit{terrible} choice. japanese launched recently; korean coming soon(ish).}
 
 \begin{frame}%
-\note{registrations on Android among users in Japan went up a little bit when we launched translation beg of Sept but only shot up when we launched platformwide and made a real effort the end of the month, as a control: Ireland are flat/growing slowly}%
+\note{note that Japan is 25x the population of Ireland but has historically had less Meetup usage. registrations on Android among users in Japan went up a little bit when we launched translation beg of Sept but only shot up when we launched platformwide and made a real effort the end of the month}%
 \input{iejp.tex}%
 \end{frame}
 
@@ -143,7 +144,8 @@
 \only<2-3>{\texttt{\%d new \%s}}%
 \only<4>{\cancel{\texttt{\%d new \%s}}}\\[1ex]
 \onslide<3->{1 nuevo mensaje, 2 nuevos mensajes}\\
-\onslide<3->{1 nueva notificación, 2 nuevas notificaciones}}}
+\onslide<3->{1 nueva notificación, 2 nuevas notificaciones}}%
+\note<4>{instead, put separate whole-sentence strings}}
 
 \takahashi{\texttt{<plurals/>}}
 \note{super-useful!}
@@ -195,8 +197,10 @@
 \takahashi{\includegraphics{phraseapp.png}}
 \note{so, we use this thing called phraseapp for managing our translations. it's pretty good, and not free but cheaper than many of the (worse) alternatives. very startuppy, \&c.}
 
+\takahashi{\stack{Provide\\Context}}
+
 \takahashi{\input{phraseapp-workflow.pdf_tex}}
-\note{workflow. don't modify English inside translation tool, nor other languages outside of it}
+\note{workflow. don't modify English inside translation tool, nor other languages outside of it. but do mention QA workflow.}
 
 \takahashi{Layout}
 
